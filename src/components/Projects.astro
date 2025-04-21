@@ -1,0 +1,72 @@
+---
+import ReactIcon from "../components/icons/React.astro";
+import TailwindIcon from "../components/icons/Tailwind.astro";
+import NodeJsIcon from "../components/icons/NodeJs.astro";
+import JavascriptIcon from "../components/icons/Javascript.astro";
+import HtmlIcon from "../components/icons/HTML.astro";
+
+
+const TAGS = {
+    REACT: {
+        name: "React",
+        class: "bg-blue-600 text-white",
+        icon: ReactIcon
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white font-bold",
+        icon: TailwindIcon
+    },
+    NODE: {
+        name: "Node Js",
+        class: "bg-green-100 text-[#41873F] font-bold",
+        icon: NodeJsIcon
+    },
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: "bg-yellow-100 text-black font-bold",
+        icon: JavascriptIcon
+    },
+    HTML: {
+        name: "HTML 5",
+        class: "bg-orange-100 text-black font-bold",
+        icon: HtmlIcon
+    }
+};
+
+const PROJECTS = [
+    {
+        title: "Slack Version",
+        description:
+            "Basado en Slack con diseño propio que implica crear una plataforma de comunicación similar a Slack, pero con un diseño personalizado. El sistema incluiría canales, mensajería directa, area de trabajo, invitacion de usuarios , verificaciones de emails y posiblemente integraciones con otras herramientas, todo adaptado a un estilo visual único y específico a mi manera espero las criticas para poder mejorar o perfeccionar lo trabajado.",
+        link: "https://proyecto-final-front-rouge.vercel.app",
+        github: "https://github.com/Aguss-Amp2/Proyecto-Final-Front",
+        image: "/projects/project1.png",
+        tags: [TAGS.REACT, TAGS.NODE, TAGS.JAVASCRIPT, TAGS.HTML],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ title, description, image, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-blue-400 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+
+            <img
+                class="rounded shadow-2xl shadow-white/10"
+                src={image}
+                alt= {`Captura del Proyecto ${image}`}
+            />
+            <ul class="flex gap-x-2 py-4 flex-row">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 text-xs rounded-full items-center ${tag.class} py-2 px-2`}>
+                            <tag.icon class="size-6"/>{tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+        </article>
+    ))
+}

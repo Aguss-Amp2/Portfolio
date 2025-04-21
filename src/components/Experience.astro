@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+    {
+        date: "Actualmente...",
+        title: "Trabajando en un Proyecto Propio",
+        company: "",
+        description:
+            "Estoy Realizando un Clon de Spotify utilizando Astro, React, JavaScript",
+        link: "",
+    },
+    {
+        date: "Agosto - 2024 / Marzo - 2025",
+        title: "Desarrollador Full Stack MERN",
+        company: "Universidad Tecnologica Nacional UTN",
+        description:
+            "Realicé la diplomatura de Desarrollador Full Stack MERN en la UTN, donde adquirí sólidos conocimientos en el desarrollo web utilizando tecnologías como MongoDB, Express.js, React y Node.js. Durante la cursada, desarrollé proyectos integrales aplicando buenas prácticas de programación, manejo de bases de datos, autenticación, APIs REST y despliegue de aplicaciones.",
+        link:"",
+    },
+];
+---
+
+<ol class="relative mt-16">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
