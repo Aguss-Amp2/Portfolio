@@ -4,6 +4,8 @@ import TailwindIcon from "../components/icons/Tailwind.astro";
 import NodeJsIcon from "../components/icons/NodeJs.astro";
 import JavascriptIcon from "../components/icons/Javascript.astro";
 import HtmlIcon from "../components/icons/HTML.astro";
+import CssIcon from "../components/icons/Css.astro";
+
 
 
 const TAGS = {
@@ -31,7 +33,12 @@ const TAGS = {
         name: "HTML 5",
         class: "bg-orange-100 text-black font-bold",
         icon: HtmlIcon
-    }
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-blue-200 text-black font-bold",
+        icon: CssIcon
+    },
 };
 
 const PROJECTS = [
@@ -42,7 +49,7 @@ const PROJECTS = [
         link: "https://proyecto-final-front-rouge.vercel.app",
         github: "https://github.com/Aguss-Amp2/Proyecto-Final-Front",
         image: "/projects/project1.png",
-        tags: [TAGS.REACT, TAGS.NODE, TAGS.JAVASCRIPT, TAGS.HTML],
+        tags: [TAGS.REACT, TAGS.NODE, TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
     },
 ];
 ---
