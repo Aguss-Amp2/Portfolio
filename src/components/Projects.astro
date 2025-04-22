@@ -5,7 +5,7 @@ import NodeJsIcon from "../components/icons/NodeJs.astro";
 import JavascriptIcon from "../components/icons/Javascript.astro";
 import HtmlIcon from "../components/icons/HTML.astro";
 import CssIcon from "../components/icons/Css.astro";
-
+import MongoDBIcon from "../components/icons/MongoDB.astro";
 
 
 const TAGS = {
@@ -36,8 +36,13 @@ const TAGS = {
     },
     CSS: {
         name: "CSS",
-        class: "bg-blue-200 text-black font-bold",
+        class: "bg-blue-100 text-black font-bold",
         icon: CssIcon
+    },
+    MONGODB: {
+        name: "MongoDB",
+        class: "bg-green-200 text-[#41873F] font-bold",
+        icon: MongoDBIcon
     },
 };
 
@@ -49,7 +54,7 @@ const PROJECTS = [
         link: "https://proyecto-final-front-rouge.vercel.app",
         github: "https://github.com/Aguss-Amp2/Proyecto-Final-Front",
         image: "/projects/project1.png",
-        tags: [TAGS.REACT, TAGS.NODE, TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
+        tags: [TAGS.REACT, TAGS.NODE, TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS, TAGS.MONGODB],
     },
 ];
 ---
