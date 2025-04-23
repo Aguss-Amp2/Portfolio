@@ -6,44 +6,55 @@ import JavascriptIcon from "../components/icons/Javascript.astro";
 import HtmlIcon from "../components/icons/HTML.astro";
 import CssIcon from "../components/icons/Css.astro";
 import MongoDBIcon from "../components/icons/MongoDB.astro";
-
+import GitHubIcon from "./icons/GitHub.astro";
+import LinkIcon from "./icons/Link.astro";
 
 const TAGS = {
     REACT: {
         name: "React",
         class: "bg-blue-600 text-white",
-        icon: ReactIcon
+        icon: ReactIcon,
     },
     TAILWIND: {
         name: "Tailwind CSS",
         class: "bg-[#003159] text-white font-bold",
-        icon: TailwindIcon
+        icon: TailwindIcon,
     },
     NODE: {
         name: "Node Js",
         class: "bg-green-100 text-[#41873F] font-bold",
-        icon: NodeJsIcon
+        icon: NodeJsIcon,
     },
     JAVASCRIPT: {
         name: "Javascript",
         class: "bg-yellow-100 text-black font-bold",
-        icon: JavascriptIcon
+        icon: JavascriptIcon,
     },
     HTML: {
         name: "HTML 5",
         class: "bg-orange-100 text-black font-bold",
-        icon: HtmlIcon
+        icon: HtmlIcon,
     },
     CSS: {
         name: "CSS",
         class: "bg-blue-100 text-black font-bold",
-        icon: CssIcon
+        icon: CssIcon,
     },
     MONGODB: {
         name: "MongoDB",
-        class: "bg-green-200 text-[#41873F] font-bold",
-        icon: MongoDBIcon
+        class: "bg-green-200 text-[#41873F] font-bold mr-13",
+        icon: MongoDBIcon,
     },
+    GITHUB: {
+        name: "GitHub",
+        class: "bg-black/60 font-bold",
+        icon: GitHubIcon,
+    },
+    LINK: {
+        name: "Demo",
+        class: "bg-blue-700",
+        icon: LinkIcon,
+    }
 };
 
 const PROJECTS = [
@@ -54,31 +65,55 @@ const PROJECTS = [
         link: "https://proyecto-final-front-rouge.vercel.app",
         github: "https://github.com/Aguss-Amp2/Proyecto-Final-Front",
         image: "/projects/project1.png",
-        tags: [TAGS.REACT, TAGS.NODE, TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS, TAGS.MONGODB],
+        tags: [
+            TAGS.REACT,
+            TAGS.NODE,
+            TAGS.JAVASCRIPT,
+            TAGS.HTML,
+            TAGS.CSS,
+            TAGS.MONGODB,
+            TAGS.GITHUB,
+            TAGS.LINK
+        ],
     },
 ];
 ---
 
 {
-    PROJECTS.map(({ title, description, image, tags }) => (
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
         <article>
             <h3 class="text-2xl font-semibold text-blue-400 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
 
-            <img
-                class="rounded shadow-2xl shadow-white/10"
-                src={image}
-                alt= {`Captura del Proyecto ${image}`}
-            />
-            <ul class="flex gap-x-2 py-4 flex-row">
+            <ul class="flex flex-wrap gap-x-2 flex-row">
                 {tags.map((tag) => (
-                    <li>
-                        <span class={`flex gap-x-2 text-xs rounded-full items-center ${tag.class} py-2 px-2`}>
-                            <tag.icon class="size-6"/>{tag.name}
-                        </span>
+                    <li class="flex">
+                        {(tag.name === "GitHub" || tag.name === "Link") ? (
+                            <a
+                                href={tag.name === "GitHub" ? github : link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class={`flex gap-x-2 text-xs rounded-full items-center ${tag.class} my-2 py-2 px-2 hover:scale-105 transition-transform`}
+                            >
+                                <tag.icon class="size-6" />
+                                {tag.name}
+                            </a>
+                        ) : (
+                            <span
+                                class={`flex gap-x-2 text-xs rounded-full items-center ${tag.class} my-2 py-2 px-2`}
+                            >
+                                <tag.icon class="size-6" />
+                                {tag.name}
+                            </span>
+                        )}
                     </li>
                 ))}
             </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/10 w-100 h-60"
+                src={image}
+                alt={`Captura del Proyecto ${image}`}
+            />
         </article>
     ))
 }

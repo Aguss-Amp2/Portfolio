@@ -11,6 +11,7 @@ import Projects from '../components/Projects.astro';
 import BriefCaseIcon from '../components/icons/BriefCase.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import MeIcon from '../components/icons/Me.astro';
+import ContacIcon from '../components/icons/Contac.astro';
 ---
 
 <Layout title="Portafolio de Agustin Amposta - Desarrollador y Programador Web" description="Desarrollador FullStack MERN">
@@ -39,7 +40,7 @@ import MeIcon from '../components/icons/Me.astro';
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer id="experiencia">
+		<SectionContainer id="experiencia" class="scroll-mt-28">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
 				<BriefCaseIcon class="size-7"/>
 				Experiencia Laboral
@@ -47,7 +48,7 @@ import MeIcon from '../components/icons/Me.astro';
 			<Experience />
 		</SectionContainer>
 
-		<SectionContainer id="proyectos">
+		<SectionContainer id="proyectos" class="scroll-mt-28">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
 				<CodeIcon class="size-7"/>
 				Proyectos
@@ -55,7 +56,7 @@ import MeIcon from '../components/icons/Me.astro';
 			<Projects />
 		</SectionContainer>
 
-		<SectionContainer id="sobre-mi">
+		<SectionContainer id="sobre-mi" class="scroll-mt-28">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
 				<MeIcon class="size-6"/>
 				Sobre Mi
