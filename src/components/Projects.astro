@@ -42,12 +42,12 @@ const TAGS = {
     },
     MONGODB: {
         name: "MongoDB",
-        class: "bg-green-200 text-[#41873F] font-bold mr-13",
+        class: "bg-green-200 text-[#41873F] font-bold",
         icon: MongoDBIcon,
     },
     GITHUB: {
         name: "GitHub",
-        class: "bg-black/60 font-bold",
+        class: "bg-gray-900 font-bold",
         icon: GitHubIcon,
     },
     LINK: {
@@ -69,8 +69,6 @@ const PROJECTS = [
             TAGS.REACT,
             TAGS.NODE,
             TAGS.JAVASCRIPT,
-            TAGS.HTML,
-            TAGS.CSS,
             TAGS.MONGODB,
             TAGS.GITHUB,
             TAGS.LINK
@@ -84,11 +82,11 @@ const PROJECTS = [
         <article>
             <h3 class="text-2xl font-semibold text-blue-400 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
-
+            
             <ul class="flex flex-wrap gap-x-2 flex-row">
                 {tags.map((tag) => (
                     <li class="flex">
-                        {(tag.name === "GitHub" || tag.name === "Link") ? (
+                        {(tag.name === "GitHub" || tag.name === "Demo") ? (
                             <a
                                 href={tag.name === "GitHub" ? github : link}
                                 target="_blank"
@@ -110,7 +108,7 @@ const PROJECTS = [
                 ))}
             </ul>
             <img
-                class="rounded shadow-2xl shadow-white/10 w-100 h-60"
+                class="rounded shadow-2xl hover:scale-102 transition-transform shadow-white/10"
                 src={image}
                 alt={`Captura del Proyecto ${image}`}
             />
