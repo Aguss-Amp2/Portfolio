@@ -1,2 +1,4 @@
-@import "tailwindcss";
 @import '@fontsource-variable/onest';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
