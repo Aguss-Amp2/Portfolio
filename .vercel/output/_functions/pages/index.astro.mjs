@@ -1,8 +1,8 @@
-import { c as createComponent, m as maybeRenderHead, r as renderTemplate, b as createAstro, e as addAttribute, f as renderHead, g as renderComponent, h as renderSlot, s as spreadAttributes, F as Fragment } from '../chunks/astro/server_BrX0ZYXp.mjs';
+import { c as createComponent, m as maybeRenderHead, r as renderTemplate, b as createAstro, e as addAttribute, f as renderHead, g as renderComponent, h as renderSlot, s as spreadAttributes, F as Fragment } from '../chunks/astro/server_YxDPrgQi.mjs';
 import 'kleur/colors';
 import 'clsx';
 /* empty css                                 */
-export { renderers } from '../renderers.mjs';
+export { r as renderers } from '../chunks/internal_BsTt5pTQ.mjs';
 
 const $$Header = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<header class="fixed top-0 left-1/2 -translate-x-1/2 z-50 flex justify-between items-center px-4 py-5 w-full xl:w-[1120px] shadow-md backdrop-blur bg-gray/60"> <img class="rounded-full size-14" src="https://pbs.twimg.com/profile_images/1905453319574720513/tx4FncIl_400x400.jpg" alt="agus photo"> <nav class="hidden md:flex flex-row gap-x-10 opacity-80"> <a href="#top" class="hover:text-blue-500 transition-colors">Inicio</a> <a href="#experiencia" class="hover:text-blue-500 transition-colors">Experiencia</a> <a href="#proyectos" class="hover:text-blue-500 transition-colors">Proyectos</a> <a href="#sobre-mi" class="hover:text-blue-500 transition-colors">Sobre Mi</a> <a href="mailto:agustinampo80@gmail.com" class="hover:text-blue-500 transition-colors">Contacto</a> </nav> </header>`;

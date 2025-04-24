@@ -1,9 +1,9 @@
 import { j as joinPaths, i as isRemotePath } from './path_BuZodYwm.mjs';
-import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, i as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, j as UnsupportedImageConversion, t as toStyleString, k as NoImageMetadata, l as FailedToFetchRemoteImageDimensions, n as ExpectedImageOptions, o as ExpectedNotESMImage, p as InvalidImageService, c as createComponent, b as createAstro, q as ImageMissingAlt, m as maybeRenderHead, e as addAttribute, s as spreadAttributes, r as renderTemplate, u as ExperimentalFontsNotEnabled, v as FontFamilyNotFound, w as unescapeHTML } from './astro/server_BrX0ZYXp.mjs';
+import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, i as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, j as UnsupportedImageConversion, t as toStyleString, k as NoImageMetadata, l as FailedToFetchRemoteImageDimensions, n as ExpectedImageOptions, o as ExpectedNotESMImage, p as InvalidImageService, c as createComponent, b as createAstro, q as ImageMissingAlt, m as maybeRenderHead, e as addAttribute, s as spreadAttributes, r as renderTemplate, u as ExperimentalFontsNotEnabled, v as FontFamilyNotFound, w as unescapeHTML } from './astro/server_YxDPrgQi.mjs';
 import 'clsx';
 import * as mime from 'mrmime';
 import 'kleur/colors';
-import '../renderers.mjs';
+import './internal_BsTt5pTQ.mjs';
 
 const VALID_SUPPORTED_FORMATS = [
   "jpeg",
@@ -1177,15 +1177,9 @@ function detector(input) {
   return types.find((fileType) => typeHandlers.get(fileType).validate(input));
 }
 
-const globalOptions = {
-  disabledTypes: []
-};
 function lookup(input) {
   const type = detector(input);
   if (typeof type !== "undefined") {
-    if (globalOptions.disabledTypes.includes(type)) {
-      throw new TypeError("disabled file type: " + type);
-    }
     const size = typeHandlers.get(type).calculate(input);
     if (size !== void 0) {
       size.type = size.type ?? type;
@@ -1262,7 +1256,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      './sharp_okpIrAJU.mjs'
+      './sharp_DkR9ySBy.mjs'
     ).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;
@@ -1513,7 +1507,7 @@ const $$Astro = createAstro();
 const $$Font = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Font;
-  const { fontsData } = await import('virtual:astro:assets/fonts/internal').catch(() => {
+  const { fontsData } = await import('./internal_BsTt5pTQ.mjs').then(n => n.i).catch(() => {
     throw new AstroError(ExperimentalFontsNotEnabled);
   });
   const { cssVariable, preload = false } = Astro2.props;
