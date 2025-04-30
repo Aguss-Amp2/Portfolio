@@ -1,5 +1,5 @@
 import { j as joinPaths, i as isRemotePath } from './path_BuZodYwm.mjs';
-import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, i as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, j as UnsupportedImageConversion, t as toStyleString, k as NoImageMetadata, l as FailedToFetchRemoteImageDimensions, n as ExpectedImageOptions, o as ExpectedNotESMImage, p as InvalidImageService, c as createComponent, b as createAstro, q as ImageMissingAlt, m as maybeRenderHead, e as addAttribute, s as spreadAttributes, r as renderTemplate, u as ExperimentalFontsNotEnabled, v as FontFamilyNotFound, w as unescapeHTML } from './astro/server_YxDPrgQi.mjs';
+import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, i as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, j as UnsupportedImageConversion, t as toStyleString, k as NoImageMetadata, l as FailedToFetchRemoteImageDimensions, n as ExpectedImageOptions, o as ExpectedNotESMImage, p as InvalidImageService, c as createComponent, b as createAstro, q as ImageMissingAlt, m as maybeRenderHead, e as addAttribute, s as spreadAttributes, r as renderTemplate, u as ExperimentalFontsNotEnabled, v as FontFamilyNotFound, w as unescapeHTML } from './astro/server_BduYY49k.mjs';
 import 'clsx';
 import * as mime from 'mrmime';
 import 'kleur/colors';
@@ -94,7 +94,7 @@ const getWidths = ({
   if (layout === "fixed") {
     return originalWidth && width > originalWidth ? [originalWidth] : [width, maxSize];
   }
-  if (layout === "responsive") {
+  if (layout === "constrained") {
     return [
       // Always include the image at 1x and 2x the specified width
       width,
@@ -114,13 +114,13 @@ const getSizesAttribute = ({
   switch (layout) {
     // If screen is wider than the max size then image width is the max size,
     // otherwise it's the width of the screen
-    case `responsive`:
+    case "constrained":
       return `(min-width: ${width}px) ${width}px, 100vw`;
     // Image is always the same width, whatever the size of the screen
-    case `fixed`:
+    case "fixed":
       return `${width}px`;
     // Image is always the width of the screen
-    case `full-width`:
+    case "full-width":
       return `100vw`;
     case "none":
     default:
@@ -1256,7 +1256,7 @@ async function getConfiguredImageService() {
   if (!globalThis?.astroAsset?.imageService) {
     const { default: service } = await import(
       // @ts-expect-error
-      './sharp_DkR9ySBy.mjs'
+      './sharp_DsyvIohr.mjs'
     ).catch((e) => {
       const error = new AstroError(InvalidImageService);
       error.cause = e;
@@ -1350,8 +1350,6 @@ async function getImage$1(options, imageConfig) {
     if (layout !== "none") {
       resolvedOptions.style = addCSSVarsToStyle(
         {
-          w: String(resolvedOptions.width),
-          h: String(resolvedOptions.height),
           fit: cssFitValues.includes(resolvedOptions.fit ?? "") && resolvedOptions.fit,
           pos: resolvedOptions.position
         },
