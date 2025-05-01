@@ -1,12 +1,7 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel'; // Actualizado
+import vercel from '@astrojs/vercel/static';
 
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   adapter: vercel(),
-  vite: {
-    ssr: {
-      noExternal: ['kleur', 'clsx', 'cookie']
-    }
-  }
 });
