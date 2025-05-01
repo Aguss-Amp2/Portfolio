@@ -8,9 +8,9 @@
     "lib": ["dom", "esnext"]
   },
   "include": [
-    "src/**/*",
-    "astro.config.mjs",
-    "pages/**/*",
-    "components/**/*"
+    "*.ts",
+    "*.tsx",
+    "*.mjs",
+    "astro.config.mjs"
   ]
 }
