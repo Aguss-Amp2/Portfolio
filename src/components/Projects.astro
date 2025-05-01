@@ -64,7 +64,7 @@ const PROJECTS = [
             "Basado en Slack con diseño propio que implica crear una plataforma de comunicación similar a Slack, pero con un diseño personalizado. El sistema incluiría canales, mensajería directa, area de trabajo, invitacion de usuarios , verificaciones de emails y posiblemente integraciones con otras herramientas, todo adaptado a un estilo visual único y específico a mi manera espero las criticas para poder mejorar o perfeccionar lo trabajado.",
         link: "https://proyecto-final-front-rouge.vercel.app",
         github: "https://github.com/Aguss-Amp2/Proyecto-Final-Front",
-        image: "./projects/project1.png",
+        image: "/projects/project1.png",
         tags: [
             TAGS.REACT,
             TAGS.NODE,
@@ -80,7 +80,7 @@ const PROJECTS = [
             "Este proyecto tiene como objetivo recrear la interfaz de usuario de Spotify, enfocándose en su diseño limpio, funcional y moderno. El sistema contará con una barra de navegación lateral para acceder a las distintas secciones, un reproductor de música fijo en la parte inferior.",
         link: "https://clon-spotify-virid.vercel.app",
         github: "https://github.com/Aguss-Amp2/Clon-Spotify",
-        image: "./projects/project2.png",
+        image: "/projects/project2.png",
         tags: [
             TAGS.REACT,
             TAGS.TAILWIND,
@@ -99,7 +99,7 @@ const PROJECTS = [
             <p class="text-lg mb-4 text-pretty">{description}</p>
             
             <ul class="flex flex-wrap gap-x-2 flex-row">
-                {tags.map((tag) => (
+                {tags.map((tag, index) => (
                     <li class="flex">
                         {(tag.name === "GitHub" || tag.name === "Demo") ? (
                             <a
