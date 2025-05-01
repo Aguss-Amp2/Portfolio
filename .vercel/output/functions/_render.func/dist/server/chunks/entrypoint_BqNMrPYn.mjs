@@ -1,6 +1,5 @@
 import { x as decryptString, y as createSlotValueFromString, z as isAstroComponentFactory, g as renderComponent, r as renderTemplate, B as ROUTE_TYPE_HEADER, C as REROUTE_DIRECTIVE_HEADER, A as AstroError, G as i18nNoLocaleFoundInPath, H as ResponseSentError, J as bold, K as red, O as yellow, P as dim, Q as blue, S as MiddlewareNoDataOrNextCalled, T as MiddlewareNotAResponse, V as originPathnameSymbol, W as RewriteWithBodyUsed, X as GetStaticPathsRequired, Y as InvalidGetStaticPathsReturn, Z as InvalidGetStaticPathsEntry, _ as GetStaticPathsExpectedParams, $ as GetStaticPathsInvalidRouteParam, a0 as PageNumberParamNotFound, D as DEFAULT_404_COMPONENT, a1 as ActionNotFoundError, a2 as NoMatchingStaticPathFound, a3 as PrerenderDynamicEndpointPathCollide, a4 as ReservedSlotName, a5 as renderSlotToString, a6 as renderJSX, a7 as chunkToString, a8 as isRenderInstruction, a9 as ForbiddenRewrite, aa as SessionStorageSaveError, ab as SessionStorageInitError, ac as ASTRO_VERSION, ad as green, ae as LocalsReassigned, af as PrerenderClientAddressNotAvailable, ag as clientAddressSymbol, ah as ClientAddressNotAvailable, ai as StaticClientAddressNotAvailable, aj as AstroResponseHeadersReassigned, ak as responseSentSymbol$1, al as renderPage, am as REWRITE_DIRECTIVE_HEADER_KEY, an as REWRITE_DIRECTIVE_HEADER_VALUE, ao as renderEndpoint, ap as LocalsNotAnObject, aq as REROUTABLE_STATUS_CODES } from './astro/server_BenDNi6T.mjs';
-import { serialize, parse } from 'cookie';
-import { A as ActionError, d as deserializeActionResult, s as serializeActionResult, a as ACTION_RPC_ROUTE_PATTERN, b as ACTION_QUERY_PARAMS, g as getActionQueryString, D as DEFAULT_404_ROUTE, c as default404Instance, N as NOOP_MIDDLEWARE_FN, e as ensure404Route } from './astro-designed-error-pages_DSgfunlH.mjs';
+import { d as distExports, A as ActionError, a as deserializeActionResult, s as serializeActionResult, b as ACTION_RPC_ROUTE_PATTERN, c as ACTION_QUERY_PARAMS, g as getActionQueryString, D as DEFAULT_404_ROUTE, e as default404Instance, N as NOOP_MIDDLEWARE_FN, f as ensure404Route } from './astro-designed-error-pages_DYpahPGV.mjs';
 import 'es-module-lexer';
 import buffer from 'node:buffer';
 import crypto$1 from 'node:crypto';
@@ -513,7 +512,7 @@ class AstroCookies {
     };
     this.#ensureOutgoingMap().set(key, [
       DELETED_VALUE,
-      serialize(key, DELETED_VALUE, serializeOptions),
+      distExports.serialize(key, DELETED_VALUE, serializeOptions),
       false
     ]);
   }
@@ -591,7 +590,7 @@ class AstroCookies {
     }
     this.#ensureOutgoingMap().set(key, [
       serializedValue,
-      serialize(key, serializedValue, serializeOptions),
+      distExports.serialize(key, serializedValue, serializeOptions),
       true
     ]);
     if (this.#request[responseSentSymbol]) {
@@ -652,7 +651,7 @@ class AstroCookies {
     if (!raw) {
       return;
     }
-    this.#requestValues = parse(raw, { decode: identity });
+    this.#requestValues = distExports.parse(raw, { decode: identity });
   }
 }
 
