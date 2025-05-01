@@ -1,5 +1,4 @@
-import { c as createComponent, m as maybeRenderHead, r as renderTemplate, b as createAstro, e as addAttribute, f as renderHead, g as renderComponent, h as renderSlot, s as spreadAttributes, F as Fragment } from '../chunks/astro/server_VKEFiZ0x.mjs';
-import 'clsx';
+import { c as createComponent, m as maybeRenderHead, r as renderTemplate, b as createAstro, e as addAttribute, f as renderHead, g as renderComponent, h as renderSlot, s as spreadAttributes, F as Fragment } from '../chunks/astro/server_BenDNi6T.mjs';
 /* empty css                                 */
 export { r as renderers } from '../chunks/internal_BsTt5pTQ.mjs';
 

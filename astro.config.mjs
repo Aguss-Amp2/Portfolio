@@ -6,7 +6,7 @@ export default defineConfig({
   adapter: vercel(),
   vite: {
     ssr: {
-      noExternal: ['kleur']
+      noExternal: ['kleur', 'clsx']
     }
   }
 });
