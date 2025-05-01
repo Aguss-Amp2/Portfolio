@@ -1,5 +1,16 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "esnext"]
+  },
+  "include": [
+    "src/**/*",
+    "astro.config.mjs",
+    "pages/**/*",
+    "components/**/*"
+  ]
 }
