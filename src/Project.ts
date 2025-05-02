@@ -71,8 +71,8 @@ export const PROJECTS = [
             TAGS.NODE,
             TAGS.JAVASCRIPT,
             TAGS.MONGODB,
-            TAGS.GITHUB,
-            TAGS.LINK,
+            // TAGS.GITHUB,
+            // TAGS.LINK,
         ],
     },
     {
@@ -86,8 +86,8 @@ export const PROJECTS = [
             TAGS.REACT,
             TAGS.TAILWIND,
             TAGS.JAVASCRIPT,
-            TAGS.GITHUB,
-            TAGS.LINK,
+            // TAGS.GITHUB,
+            // TAGS.LINK,
         ],
     },
 ];
