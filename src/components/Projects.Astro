@@ -61,7 +61,7 @@ const PROJECTS = [
     {
         title: "Slack Version",
         description:
-            "Basado en Slack con diseño propio que implica crear una plataforma de comunicación similar a Slack, pero con un diseño personalizado. El sistema incluiría canales, mensajería directa, area de trabajo, invitacion de usuarios , verificaciones de emails y posiblemente integraciones con otras herramientas, todo adaptado a un estilo visual único y específico a mi manera espero las criticas para poder mejorar o perfeccionar lo trabajado.",
+            "Basado en Slack con diseño propio que implica crear una plataforma de comunicación similar a Slack, pero con un diseño personalizado...",
         link: "https://proyecto-final-front-rouge.vercel.app",
         github: "https://github.com/Aguss-Amp2/Proyecto-Final-Front",
         image: "/projects/project1.png",
@@ -77,7 +77,7 @@ const PROJECTS = [
     {
         title: "Clon Front Spotify",
         description:
-            "Este proyecto tiene como objetivo recrear la interfaz de usuario de Spotify, enfocándose en su diseño limpio, funcional y moderno. El sistema contará con una barra de navegación lateral para acceder a las distintas secciones, un reproductor de música fijo en la parte inferior.",
+            "Este proyecto tiene como objetivo recrear la interfaz de usuario de Spotify, enfocándose en su diseño limpio, funcional y moderno...",
         link: "https://clon-spotify-virid.vercel.app",
         github: "https://github.com/Aguss-Amp2/Clon-Spotify",
         image: "/projects/project2.png",
@@ -92,53 +92,44 @@ const PROJECTS = [
 ];
 ---
 
-{
-    PROJECTS.map(({ title, description, link, github, image, tags }) => {
-        return (
-            <article class="mt-8">
+<section>
+    {
+        PROJECTS.map(({ title, description, link, github, image, tags }) => (
+            <article class="mt-8 overflow-hidden">
                 <h3 class="text-2xl font-semibold text-blue-400 mb-2">
                     {title}
                 </h3>
                 <p class="text-lg mb-4 text-pretty">{description}</p>
-
                 <ul class="flex flex-wrap gap-x-2 flex-row">
-                    {tags.map((tag) => {
-                        return (
-                            <li class="flex">
-                                {tag.name === "GitHub" ||
-                                tag.name === "Demo" ? (
-                                    <a
-                                        href={
-                                            tag.name === "GitHub"
-                                                ? github
-                                                : link
-                                        }
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class={`flex gap-x-2 text-xs rounded-full items-center ${tag.class} my-2 py-2 px-2 hover:scale-105 transition-transform`}
-                                    >
-                                        <tag.icon class="size-6" />
-                                        {tag.name}
-                                    </a>
-                                ) : (
-                                    <span
-                                        class={`flex gap-x-2 text-xs rounded-full items-center ${tag.class} my-2 py-2 px-2`}
-                                    >
-                                        <tag.icon class="size-6" />
-                                        {tag.name}
-                                    </span>
-                                )}
-                            </li>
-                        );
-                    })}
+                    {tags.map((tag) => (
+                        <li class="flex">
+                            {tag.name === "GitHub" || tag.name === "Demo" ? (
+                                <a
+                                    href={tag.name === "GitHub" ? github : link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class={`flex gap-x-2 text-xs rounded-full items-center ${tag.class} my-2 py-2 px-2 hover:scale-105 transition-transform`}
+                                >
+                                    <tag.icon class="size-6" />
+                                    {tag.name}
+                                </a>
+                            ) : (
+                                <span
+                                    class={`flex gap-x-2 text-xs rounded-full items-center ${tag.class} my-2 py-2 px-2`}
+                                >
+                                    <tag.icon class="size-6" />
+                                    {tag.name}
+                                </span>
+                            )}
+                        </li>
+                    ))}
                 </ul>
-
                 <img
                     class="rounded shadow-2xl hover:scale-102 transition-transform shadow-white/10"
                     src={image}
-                    alt={`Captura del Proyecto ${image}`}
+                    alt={`Captura del Proyecto ${title}`}
                 />
             </article>
-        );
-    })
-}
+        ))
+    }
+</section>
